@@ -3,12 +3,22 @@ import { connect } from 'react-redux';
 
 class Feeling extends Component {
 
-    onFeelingChange = ( event ) => {
-        // send feeling value to redux pot
-        this.props.dispatch( { type: 'SET_FEELING', 
-                               payload: { feeling: event.target.value } } );
+    // state is needed to disable button
+    // if user hasn't chosen a feeling
+    state = {
+        feeling: ''
     }
 
+    onFeelingChange = ( event ) => {
+
+        this.setState({
+            feeling: event.target.value
+        })
+
+        // send feeling value to redux pot
+        this.props.dispatch( { type: 'SET_FEELING', 
+                               payload: { feeling: this.state.feeling } } );
+    }
 
     render() {
 
@@ -43,7 +53,9 @@ class Feeling extends Component {
                 
                 <br />
 
-                <button>Next</button>
+                <button disabled={ this.state.feeling === '' }
+                        onClick={ () => this.props.history.push('/understand') }
+                        >Next</button>
             </>
         );
 
