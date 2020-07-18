@@ -3,35 +3,24 @@ import { connect } from 'react-redux';
 
 class Comment extends Component {
 
-    // state is needed to disable button
-    // if user hasn't chosen an understanding level
-    // state = {
-    //     understand: ''
-    // }
+    // state not necessary for comments
+    // as they are not required ( user can leave it empty )
 
     onCommentChange = ( event ) => {
 
-        // this.setState({
-        //     understand: event.target.value
-        // })
-
-        // send understand value to redux pot
+        // send comments to redux pot
         this.props.dispatch( { type: 'SET_COMMENT', 
                                payload: { understand: event.target.value } } );
     }
 
-    coolFunction = ( event ) => {
-        console.log( event.target.value );
-    }
-
+    
     render() {
 
         return (
             <>
                 <label>Any comments you want to leave?</label><br />
 
-                <textarea onChange={ this.coolFunction }></textarea>
-                <br />
+                <textarea onChange={ this.onCommentChange }></textarea><br />
 
                 <button onClick={ () => this.props.history.push( '/review' ) }
                         >Review Submission</button>
