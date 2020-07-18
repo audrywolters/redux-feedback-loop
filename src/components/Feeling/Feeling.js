@@ -4,7 +4,9 @@ class Feeling extends Component {
   render() {
     return (
       <>
-        <span>Hi</span>
+        <label>How are you feeling today?</label>
+        <input type="number" min="0" max="5" value="0" />
+        <button>Next</button>
       </>
     );
   }
