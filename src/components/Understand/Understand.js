@@ -55,7 +55,7 @@ class Understand extends Component {
                 <br />
 
                 <button disabled={ this.state.understand === '' }
-                        // onClick={ () => this.props.history.push('/support') }
+                        onClick={ () => this.props.history.push('/support') }
                         >Next</button>
             </>
         );
