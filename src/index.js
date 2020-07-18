@@ -19,13 +19,23 @@ const setFeeling = ( state={}, action ) => {
     return state;
 }
 
+// catch the user's understanding of content
+const setUnderstand = ( state={}, action ) => {
+
+    if ( action.type === 'SET_UNDERSTAND' ) {
+        return action.payload;
+    }
+    return state;
+}
+
 
 
 // here is the redux pot of fun data!
 const storeInstance = createStore(
     // activate our listeners
     combineReducers( {
-        setFeeling
+        setFeeling,
+        setUnderstand
     } ),
     // lets us use the v nice console display of all our data
     applyMiddleware( logger )
