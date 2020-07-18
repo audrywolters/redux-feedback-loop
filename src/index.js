@@ -28,6 +28,14 @@ const setUnderstand = ( state={}, action ) => {
     return state;
 }
 
+// catch the user's feeling of being supported
+const setSupport = ( state={}, action ) => {
+
+    if ( action.type === 'SET_SUPPORT' ) {
+        return action.payload;
+    }
+    return state;
+}
 
 
 // here is the redux pot of fun data!
@@ -35,7 +43,8 @@ const storeInstance = createStore(
     // activate our listeners
     combineReducers( {
         setFeeling,
-        setUnderstand
+        setUnderstand,
+        setSupport
     } ),
     // lets us use the v nice console display of all our data
     applyMiddleware( logger )
