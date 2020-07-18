@@ -17,7 +17,7 @@ class Feeling extends Component {
 
         // send feeling value to redux pot
         this.props.dispatch( { type: 'SET_FEELING', 
-                               payload: { feeling: this.state.feeling } } );
+                               payload: { feeling: event.target.value } } );
     }
 
     render() {
