@@ -30,7 +30,7 @@ class Comment extends Component {
     }
 }
 
-const putReduxStateonProps = ( reduxState ) =>({
+const putReduxStateonProps = ( reduxState ) => ({
     understand: reduxState.understand
 })
 

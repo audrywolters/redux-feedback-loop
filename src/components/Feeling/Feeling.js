@@ -63,7 +63,7 @@ class Feeling extends Component {
     }
 }
 
-const putReduxStateonProps = ( reduxState ) =>({
+const putReduxStateonProps = ( reduxState ) => ({
     feeling: reduxState.feeling
 })
   

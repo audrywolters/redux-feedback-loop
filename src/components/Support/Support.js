@@ -62,7 +62,7 @@ class Support extends Component {
     }
 }
 
-const putReduxStateonProps = ( reduxState ) =>({
+const putReduxStateonProps = ( reduxState ) => ({
     support: reduxState.support
 })
   
