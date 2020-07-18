@@ -9,7 +9,7 @@ class Feeling extends Component {
                                payload: { feeling: event.target.value } } );
     }
 
-    
+
     render() {
 
         return (
@@ -18,7 +18,7 @@ class Feeling extends Component {
 
                 {/* ONE */}
                 <input onChange={ this.onFeelingChange } 
-                       type="radio" id="one" name="feeling" value="1" checked={ true } />
+                       type="radio" id="one" name="feeling" value="1" />
                 <label htmlFor="one">1</label>
 
                 {/* TWO */}
