@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 class Understand extends Component {
 
     // state is needed to disable button
-    // if user hasn't chosen a understand
+    // if user hasn't chosen an understanding level
     state = {
         understand: ''
     }
