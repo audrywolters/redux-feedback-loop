@@ -54,7 +54,7 @@ class Support extends Component {
                 <br />
 
                 <button disabled={ this.state.support === '' }
-                        onClick={ () => this.props.history.push('/comment') }
+                        onClick={ () => this.props.history.push( '/comment' ) }
                         >Next</button>
             </>
         );

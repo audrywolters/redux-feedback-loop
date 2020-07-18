@@ -37,6 +37,15 @@ const setSupport = ( state={}, action ) => {
     return state;
 }
 
+// catch the user's comments
+const setComment = ( state={}, action ) => {
+
+    if ( action.type === 'SET_COMMENT' ) {
+        return action.payload;
+    }
+    return state;
+}
+
 
 // here is the redux pot of fun data!
 const storeInstance = createStore(
@@ -44,7 +53,8 @@ const storeInstance = createStore(
     combineReducers( {
         setFeeling,
         setUnderstand,
-        setSupport
+        setSupport,
+        setComment
     } ),
     // lets us use the v nice console display of all our data
     applyMiddleware( logger )

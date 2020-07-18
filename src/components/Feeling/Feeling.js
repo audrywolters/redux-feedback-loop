@@ -20,6 +20,7 @@ class Feeling extends Component {
                                payload: { feeling: event.target.value } } );
     }
 
+
     render() {
 
         return (
@@ -54,7 +55,7 @@ class Feeling extends Component {
                 <br />
 
                 <button disabled={ this.state.feeling === '' }
-                        onClick={ () => this.props.history.push('/understand') }
+                        onClick={ () => this.props.history.push( '/understand' ) }
                         >Next</button>
             </>
         );
