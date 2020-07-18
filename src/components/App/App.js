@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../Header/Header';
+import Feeling from '../Feeling/Feeling';
 import './App.css';
 
 class App extends Component {
@@ -8,6 +9,7 @@ class App extends Component {
     return (
       <>
         <Header />
+        <Feeling />
       </>
     );
   }
