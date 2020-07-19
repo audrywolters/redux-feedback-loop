@@ -15,9 +15,9 @@ class Understand extends Component {
             understand: event.target.value
         })
 
-        // send understand value to redux pot
+        // send understand value to redux bucket
         this.props.dispatch( { type: 'SET_UNDERSTAND', 
-                               payload: { understand: event.target.value } } );
+                               payload: event.target.value } );
     }
 
 
@@ -25,7 +25,7 @@ class Understand extends Component {
 
         return (
             <>
-                <label>How well are you understanding the content?</label><br />
+                <h3>How well are you understanding the content?</h3><br />
 
                 {/* ONE */}
                 <input onChange={ this.onUnderstandChange } 
@@ -63,7 +63,7 @@ class Understand extends Component {
     }
 }
 
-const putReduxStateonProps = ( reduxState ) =>({
+const putReduxStateonProps = ( reduxState ) => ({
     understand: reduxState.understand
 })
   
