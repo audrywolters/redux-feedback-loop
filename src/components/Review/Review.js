@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 class Review extends Component { 
 
     // send all feedback to the DB for saving
     onSubmitClick = () => {
-        console.log( 'hey' );
+        console.log( 'hey im submitting' );
+
+        let feedback = {
+            feeling: this.props.reduxState.feeling,
+            understanding: this.props.reduxState.understand,
+            support: this.props.reduxState.support,
+            comments: this.props.reduxState.comment
+        };
+
+        axios.post( '/', feedback )
+        .then( response =>{
+            console.log( 'response: ', response );
+            this.props.history.push( '/success');
+        }).catch( ( error )=>{
+            alert( 'Could not save feedback. Please again later' );
+        })
     }
 
 
