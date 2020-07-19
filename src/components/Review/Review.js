@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 
 class Review extends Component { 
 
+    // send all feedback to the DB for saving
+    onSubmitClick = () => {
+        console.log( 'hey' );
+    }
+
+
     render() {
         return (
             <>
@@ -20,6 +26,7 @@ class Review extends Component {
                 <label>Comment: </label>
                 <span>{ this.props.reduxState.comment }</span><br />
 
+                <button onClick={ this.onSubmitClick }>Submit</button>
             </>
         )
     }
