@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
-// AUDRY - what is this and do I need it. we did fine w/o it in pizza parlor
 import registerServiceWorker from './registerServiceWorker';
-//
 import App from './components/App/App';
 import './index.css';
 
@@ -14,7 +12,6 @@ import './index.css';
 const feeling = ( state='', action ) => {
 
     if ( action.type === 'SET_FEELING' ) {
-        console.log('state', state)
         return action.payload;
     }
     return state;
@@ -50,7 +47,7 @@ const comment = ( state='', action ) => {
 
 // here is the redux bucket of fun data!
 const storeInstance = createStore(
-    // activate our listeners
+    // activate our listeners/setters
     combineReducers( {
         feeling,
         understand,
@@ -65,5 +62,4 @@ const storeInstance = createStore(
 ReactDOM.render( <Provider store={ storeInstance }><App /></Provider>,
                  document.getElementById( 'root' ) );
 
-// AUDRY - what is this and do I need it    
 registerServiceWorker();
