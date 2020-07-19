@@ -6,6 +6,8 @@ class Review extends Component {
     // send all feedback to the DB for saving
     onSubmitClick = () => {
         console.log( 'hey' );
+        // if DB is successful then on to the next page!
+        this.props.history.push( '/success')
     }
 
 

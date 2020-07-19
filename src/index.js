@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
-// AUDRY - what is this and do I need it. we did fine w/o it in pizza parlor
 import registerServiceWorker from './registerServiceWorker';
-//
 import App from './components/App/App';
 import './index.css';
 
@@ -65,5 +63,4 @@ const storeInstance = createStore(
 ReactDOM.render( <Provider store={ storeInstance }><App /></Provider>,
                  document.getElementById( 'root' ) );
 
-// AUDRY - what is this and do I need it    
 registerServiceWorker();
