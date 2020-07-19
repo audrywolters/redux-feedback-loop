@@ -6,7 +6,6 @@ class Review extends Component {
 
     // send all feedback to the DB for saving
     onSubmitClick = () => {
-        console.log( 'hey im submitting' );
 
         let feedback = {
             feeling: this.props.reduxState.feeling,
@@ -16,10 +15,9 @@ class Review extends Component {
         };
 
         axios.post( '/', feedback )
-        .then( response =>{
-            console.log( 'response: ', response );
+        .then( response => {
             this.props.history.push( '/success');
-        }).catch( ( error )=>{
+        }).catch( ( error )=> {
             alert( 'Could not save feedback. Please again later' );
         })
     }
