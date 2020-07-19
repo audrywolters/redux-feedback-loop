@@ -4,8 +4,6 @@ const pool = require('../modules/pool');
 // save user's feedback
 router.post( '/', ( req, res ) => {
 
-    console.log(req.body);
-    
     const query = 
     `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
      VALUES ( $1, $2, $3, $4 )`;
@@ -15,7 +13,7 @@ router.post( '/', ( req, res ) => {
     .then( ( result ) => {
         res.sendStatus( 201 );
     }).catch( ( err ) => {
-        console.log( '>:| insert went poorly: ' + err );
+        console.log( '>:| insert went poorly. ' + err );
         res.sendStatus( 500 );
     })
 })

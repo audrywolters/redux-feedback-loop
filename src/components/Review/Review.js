@@ -22,10 +22,6 @@ class Review extends Component {
         }).catch( ( error )=>{
             alert( 'Could not save feedback. Please again later' );
         })
-
-        // this.props.dispatch( { type: 'SAVE_FEEDBACK',
-        //                        payload: 'hi' } );
-        
     }
 
 
