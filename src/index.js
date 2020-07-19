@@ -12,7 +12,6 @@ import './index.css';
 const feeling = ( state='', action ) => {
 
     if ( action.type === 'SET_FEELING' ) {
-        console.log('state', state)
         return action.payload;
     }
     return state;
@@ -44,6 +43,22 @@ const comment = ( state='', action ) => {
     }
     return state;
 }
+
+// const save = ( state='', action ) => {
+
+//     if ( action.type === 'SAVE_FEEDBACK') {
+//         state = [...state];
+//         console.log('saving. state: ', state );
+
+//         // axios.post( '/', customer )
+//         // .then( response =>{
+//         // console.log( 'response: ', response );
+//         // }).catch( ( error )=>{
+//         // alert( 'Could not save feedback. Please again later' );
+//         // })
+//     }
+//     return state;
+// }
 
 
 // here is the redux bucket of fun data!
