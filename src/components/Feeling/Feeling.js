@@ -15,9 +15,9 @@ class Feeling extends Component {
             feeling: event.target.value
         })
 
-        // send feeling value to redux pot
+        // send feeling value to redux bucket
         this.props.dispatch( { type: 'SET_FEELING', 
-                               payload: { feeling: event.target.value } } );
+                               payload: event.target.value } );
     }
 
 
@@ -25,7 +25,7 @@ class Feeling extends Component {
 
         return (
             <>
-                <label>How are you feeling today?</label><br />
+                <h3>How are you feeling today?</h3><br />
 
                 {/* ONE */}
                 <input onChange={ this.onFeelingChange } 

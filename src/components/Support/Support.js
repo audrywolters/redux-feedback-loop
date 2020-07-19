@@ -15,16 +15,16 @@ class Support extends Component {
             support: event.target.value
         })
 
-        // send support value to redux pot
+        // send support value to redux bucket
         this.props.dispatch( { type: 'SET_SUPPORT', 
-                               payload: { support: event.target.value } } );
+                               payload: event.target.value } );
     }
 
     render() {
 
         return (
             <>
-                <label>How are you support today?</label><br />
+                <h3>How are you support today?</h3><br />
 
                 {/* ONE */}
                 <input onChange={ this.onSupportChange } 
@@ -54,7 +54,7 @@ class Support extends Component {
                 <br />
 
                 <button disabled={ this.state.support === '' }
-                        onClick={ () => this.props.history.push( '/comment' ) }
+                        onClick={ () => this.props.history.push( '/comment') }
                         >Next</button>
             </>
         );
@@ -62,7 +62,7 @@ class Support extends Component {
     }
 }
 
-const putReduxStateonProps = ( reduxState ) => ({
+const putReduxStateonProps = ( reduxState ) =>({
     support: reduxState.support
 })
   

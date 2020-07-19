@@ -1,19 +1,33 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Review extends Component {
+class Review extends Component { 
 
     render() {
         return (
             <>
-                <span>asdjfh</span>
+                <h3>Review Your Feedback</h3><br />
+                
+                <label>Feeling: </label>
+                <span>{ this.props.reduxState.feeling }</span><br />
+                
+                <label>Understand: </label>
+                <span>{ this.props.reduxState.understand }</span><br />
+                
+                <label>Support: </label>
+                <span>{ this.props.reduxState.support }</span><br />
+                
+                <label>Comment: </label>
+                <span>{ this.props.reduxState.comment }</span><br />
+
             </>
         )
     }
 }
 
-const putReduxStateonProps = ( reduxState ) => ({
-    feeling: reduxState.feeling
+
+const reduxState = ( reduxState ) => ({
+    reduxState
 })
-  
-export default connect( putReduxStateonProps )( Review );
+
+export default connect( reduxState )( Review );

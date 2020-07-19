@@ -11,16 +11,17 @@ import './index.css';
 
 
 // catch the user's feeling of the day
-const setFeeling = ( state={}, action ) => {
+const feeling = ( state='', action ) => {
 
     if ( action.type === 'SET_FEELING' ) {
+        console.log('state', state)
         return action.payload;
     }
     return state;
 }
 
 // catch the user's understanding of content
-const setUnderstand = ( state={}, action ) => {
+const understand = ( state='', action ) => {
 
     if ( action.type === 'SET_UNDERSTAND' ) {
         return action.payload;
@@ -29,7 +30,7 @@ const setUnderstand = ( state={}, action ) => {
 }
 
 // catch the user's feeling of being supported
-const setSupport = ( state={}, action ) => {
+const support = ( state='', action ) => {
 
     if ( action.type === 'SET_SUPPORT' ) {
         return action.payload;
@@ -38,7 +39,7 @@ const setSupport = ( state={}, action ) => {
 }
 
 // catch the user's comments
-const setComment = ( state={}, action ) => {
+const comment = ( state='', action ) => {
 
     if ( action.type === 'SET_COMMENT' ) {
         return action.payload;
@@ -47,14 +48,14 @@ const setComment = ( state={}, action ) => {
 }
 
 
-// here is the redux pot of fun data!
+// here is the redux bucket of fun data!
 const storeInstance = createStore(
     // activate our listeners
     combineReducers( {
-        setFeeling,
-        setUnderstand,
-        setSupport,
-        setComment
+        feeling,
+        understand,
+        support,
+        comment
     } ),
     // lets us use the v nice console display of all our data
     applyMiddleware( logger )

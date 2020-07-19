@@ -8,9 +8,9 @@ class Comment extends Component {
 
     onCommentChange = ( event ) => {
 
-        // send comments to redux pot
+        // send comments to redux basket
         this.props.dispatch( { type: 'SET_COMMENT', 
-                               payload: { understand: event.target.value } } );
+                               payload: event.target.value } );
     }
 
     
@@ -18,7 +18,7 @@ class Comment extends Component {
 
         return (
             <>
-                <label>Any comments you want to leave?</label><br />
+                <h3>Any comments you want to leave?</h3><br />
 
                 <textarea onChange={ this.onCommentChange }></textarea><br />
 
@@ -31,7 +31,7 @@ class Comment extends Component {
 }
 
 const putReduxStateonProps = ( reduxState ) => ({
-    understand: reduxState.understand
+    comment: reduxState.comment
 })
 
 export default connect( putReduxStateonProps )( Comment );
