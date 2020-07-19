@@ -26,7 +26,7 @@ class Review extends Component {
     render() {
         return (
             <>
-                <h3>Review Your Feedback</h3><br />
+                <h3>Review Your Feedback</h3>
                 
                 <label>Feeling: </label>
                 <span>{ this.props.reduxState.feeling }</span><br />
@@ -38,7 +38,9 @@ class Review extends Component {
                 <span>{ this.props.reduxState.support }</span><br />
                 
                 <label>Comment: </label>
-                <span>{ this.props.reduxState.comment }</span><br />
+                <span>{ this.props.reduxState.comment }</span>
+                
+                <br /><br />
 
                 <button onClick={ this.onSubmitClick }>Submit</button>
             </>

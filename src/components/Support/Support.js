@@ -24,7 +24,7 @@ class Support extends Component {
 
         return (
             <>
-                <h3>How are you support today?</h3><br />
+                <h3>How well are you being supported?</h3>
 
                 {/* ONE */}
                 <input onChange={ this.onSupportChange } 
@@ -51,7 +51,7 @@ class Support extends Component {
                        type="radio" id="five" name="support" value="5" />
                 <label htmlFor="five">5</label>
                 
-                <br />
+                <br /><br />
 
                 <button disabled={ this.state.support === '' }
                         onClick={ () => this.props.history.push( '/comment') }

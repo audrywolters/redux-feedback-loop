@@ -18,9 +18,11 @@ class Comment extends Component {
 
         return (
             <>
-                <h3>Any comments you want to leave?</h3><br />
+                <h3>Any comments you want to leave?</h3>
 
-                <textarea onChange={ this.onCommentChange }></textarea><br />
+                <textarea onChange={ this.onCommentChange }></textarea>
+                
+                <br /><br />
 
                 <button onClick={ () => this.props.history.push( '/review' ) }
                         >Review Submission</button>

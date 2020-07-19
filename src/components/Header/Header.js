@@ -4,7 +4,7 @@ import './Header.css';
 function Header() {
 
     return <div className="headerContainer">
-                <h1>Feedback</h1>
+                <h1>Feedback Time!</h1>
             </div>
 
 }

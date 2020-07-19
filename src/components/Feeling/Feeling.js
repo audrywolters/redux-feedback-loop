@@ -25,7 +25,7 @@ class Feeling extends Component {
 
         return (
             <>
-                <h3>How are you feeling today?</h3><br />
+                <h3>How are you feeling today?</h3>
 
                 {/* ONE */}
                 <input onChange={ this.onFeelingChange } 
@@ -52,7 +52,7 @@ class Feeling extends Component {
                        type="radio" id="five" name="feeling" value="5" />
                 <label htmlFor="five">5</label>
                 
-                <br />
+                <br /><br />
 
                 <button disabled={ this.state.feeling === '' }
                         onClick={ () => this.props.history.push( '/understand' ) }

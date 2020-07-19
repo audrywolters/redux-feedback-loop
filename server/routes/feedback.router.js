@@ -3,6 +3,7 @@ const pool = require('../modules/pool');
 
 // save user's feedback
 router.post( '/', ( req, res ) => {
+    console.log(req.body);
 
     const query = 
     `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
